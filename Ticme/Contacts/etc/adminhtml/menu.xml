@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ticme_Contacts::menu" title="Ticme Contacts" module="Ticme_Contacts" sortOrder="20" dependsOnModule="Ticme_Contacts" resource="Ticme_Contacts::menu"/>
+        <add id="Ticme_Contacts::index" title="All Contacts" module="Ticme_Contacts" action="contacts/contact/index" parent="Ticme_Contacts::menu" sortOrder="20" dependsOnModule="Ticme_Contacts" resource="Ticme_Contacts::index"/>
+    </menu>
+</config>

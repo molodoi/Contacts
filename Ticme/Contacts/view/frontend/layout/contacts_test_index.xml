@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+Cette instruction permet de dire à magento2 qu'on va mettre à jour cette action avec le template 1column de notre template magento
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    	<!-- referenceBlock permet de récupérer le block avec le nom correspondant à son attribut name (ici "content") -->
+        <referenceContainer name="content">
+        	<!-- block permet de rajouter un bloc, ici ce bloc utilisera la logique de la classe "Magento\Framework\View\Element\Template", aura le nom "contactForm" et utilisera le fichier de template "test_index.phtml" se trouvant dans le module Ticme_Contacts. -->
+            <block class="Ticme\Contacts\Block\ContactsList" name="contactForm" template="Ticme_Contacts::contacts_list.phtml"></block>
+        </referenceContainer>
+    </body>
+</page>

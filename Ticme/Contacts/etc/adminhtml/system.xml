@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!--
+        :: Ajouter notre champs de configuration dans magento2 ::
+        On peut retrouver ces champs par leur "chemin" structuré comme ceci id_section/id_group/id_field, exemple ci dessous le "chemin" de notre champ "title" est "ticme_contacts/contact/title".
+     -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="ticme" translate="label" sortOrder="1000">
+            <label>Ticme</label>
+        </tab>
+        <section id="ticme_contacts" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Contacts Section</label>
+            <tab>ticme</tab>
+            <resource>Ticme_Contacts::config</resource>
+            <group id="contact" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Contact Group</label>
+                <field id="is_active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Active</label>
+                    <comment>Do you want to show the contacts or not ? </comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                    <comment>Put a title here</comment>
+                    <validate>required-entry validate-data</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
